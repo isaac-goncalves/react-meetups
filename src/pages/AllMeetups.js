@@ -8,18 +8,18 @@ export default function AllMeetups() {
 
   useEffect(() => {
     fetch(
-      'https://react-getting-started-96008-default-rtdb.firebaseio.com/meetups.json'
+      "https://react-getting-started-96008-default-rtdb.firebaseio.com/meetups.json"
     )
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         const meetups = [];
 
         for (const key in data) {
           const meetup = {
             id: key,
-            ...data[key]
+            ...data[key],
           };
           meetups.push(meetup);
         }
@@ -27,15 +27,15 @@ export default function AllMeetups() {
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
-
-    if (isLoading) {
-      return (
-        <section>
-          <p>Loading...</p>
-        </section>
-      );
-    }
   }, []);
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
 
   return (
     <section>

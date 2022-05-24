@@ -15,7 +15,10 @@ export default function MainNavigation() {
                         <Link to='/new-meetup'>Add New Meetup</Link>
                     </li>
                     <li>
-                        <Link to='/favorites'>My Favorites</Link>
+                        <Link to='/favorites'>
+                            My Favorites
+                            <span className={classes.badge}></span>
+                            </Link>
                     </li>
                 </ul>
             </nav>

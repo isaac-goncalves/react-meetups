@@ -1,12 +1,14 @@
 
 import MeetupItem from "./MeetupItem.js";
 import React from "react";
+import classes from './MeetupList.module.css'
+
 
 export default function MeetupList(props) {
   return (
-    <ul>
+    <ul className={classes.list}>
       {props.meetups.map(meetup =>
-        <MeetupItem
+        <MeetupItem 
           key={meetup.id}
           id={meetup.id}
           image={meetup.image}
